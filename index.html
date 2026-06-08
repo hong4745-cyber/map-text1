@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>바삭공장 — 매장 찾기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=d2o7mgo0an&submodules=geocoder"></script>
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- 좌측 패널 -->
+    <aside class="panel">
+
+      <header class="panel-header">
+        <div class="brand">
+          <span class="brand-mark">B</span>
+          <div>
+            <p class="brand-label">바삭공장</p>
+            <p class="brand-sub">매장 찾기</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- 검색 -->
+      <div class="search-section">
+        <div class="search-wrap">
+          <input
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="주소 또는 지역명 검색"
+          />
+          <button id="searchBtn" class="search-btn">검색</button>
+        </div>
+        <p class="search-hint" id="searchHint"></p>
+      </div>
+
+      <!-- 지도 타입 전환 -->
+      <div class="map-type-toggle">
+        <button class="toggle-btn active" id="btnNormal" onclick="setMapType('normal')">일반</button>
+        <button class="toggle-btn" id="btnSatellite" onclick="setMapType('satellite')">위성</button>
+      </div>
+
+      <!-- 지점 목록 -->
+      <div class="store-count">전국 <strong>5</strong>개 매장</div>
+      <ul class="store-list" id="storeList"></ul>
+
+    </aside>
+
+    <!-- 우측 지도 -->
+    <main class="map-container">
+      <div id="map"></div>
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
